@@ -10,6 +10,7 @@ export default function Navbar() {
       <ul className="flex justify-between">
         <Link href="/">Home</Link>
         <Link href="/services">Services</Link>
+        <Link href="/posts">Posts</Link>
         <Link href="/about">About Us</Link>
       </ul>
     </nav>
