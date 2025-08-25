@@ -9,8 +9,6 @@ export default async function MealsPage({ searchParams }) {
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query.search}`
       );
       const data = await res.json();
-      console.log(data);
-      // setMeals(data?.meals || []);
       return data.meals;
     } catch (error) {
       console.log(error);

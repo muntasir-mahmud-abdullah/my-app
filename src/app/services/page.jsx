@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import style from '../posts/post.module.css';
 const data = [
   {
     "id": 1,
@@ -59,7 +60,7 @@ export default function ServicesPage() {
      {
         data.map((d)=> {
             return (
-            <Link key={d.id} href={`/services/${d.id}`}> <p> {d.name} </p>  </Link>
+            <Link key={d.id} href={`/services/${d.id}`}> <p className={`${style["post-title"]}`}> {d.name} </p>  </Link>
             )
         })
      }

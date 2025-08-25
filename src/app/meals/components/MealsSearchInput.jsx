@@ -1,4 +1,5 @@
 "use client";
+import { Input } from "@/components/ui/input";
 import { usePathname,useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 export default function MealsSearchInput() {
@@ -14,7 +15,7 @@ export default function MealsSearchInput() {
   }, [search]);
   return (
     <div>
-      <input
+      <Input placeholder="Search"
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}

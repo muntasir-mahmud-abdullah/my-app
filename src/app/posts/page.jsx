@@ -1,5 +1,6 @@
 import Link from "next/link";
-
+import style from "./post.module.css";
+import { Button } from "@/components/ui/button";
 export async function getPost() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
@@ -13,11 +14,11 @@ export default async function PostPage() {
       {posts.map((singlePost) => {
         return (
           <div key={singlePost.id}>
-            <p>{singlePost.title}</p>
+            <p className={`${style["post-title"]}`}>{singlePost.title}</p>
             <p>{singlePost.body}</p>
-            <Link href={`/posts/${singlePost.id}`}>
-            Details
-            </Link>
+            <Button asChild={true} variant={"ghost"} size={"lg"}>
+              <Link href={`/posts/${singlePost.id}`}>Details</Link>
+            </Button>
           </div>
         );
       })}
