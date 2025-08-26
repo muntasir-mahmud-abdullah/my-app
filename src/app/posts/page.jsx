@@ -6,6 +6,12 @@ export async function getPost() {
   const data = await res.json();
   return data;
 }
+
+export const metadata = {
+  title: "All Posts",
+  description: "trying to show all posts",
+};
+
 export default async function PostPage() {
   const posts = await getPost();
   console.log(posts);
